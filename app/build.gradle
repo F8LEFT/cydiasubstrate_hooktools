@@ -34,7 +34,7 @@ model {
     }
 
     android {
-        compileSdkVersion 19
+        compileSdkVersion 23
         buildToolsVersion "23.0.2"
 
         defaultConfig {
@@ -42,11 +42,13 @@ model {
             minSdkVersion.apiLevel 16
             targetSdkVersion.apiLevel 19
 
-            ndk {
-                moduleName "substrate-dvm"
-                ldLibs.addAll(["log", "dl"])
-                cppFlags.addAll(["-Wpointer-arith", "-fpermissive", "-Wformat"])
-            }
+
+        }
+
+        ndk {
+            moduleName "substrate-dvm"
+            ldLibs.addAll(["log", "dl"])
+            cppFlags.addAll(["-Wpointer-arith", "-fpermissive", "-Wformat"])
         }
 
         productFlavors {
